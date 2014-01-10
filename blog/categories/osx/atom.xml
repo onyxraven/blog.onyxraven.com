@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Osx | My Octopress Blog]]></title>
+  <link href="http://onyxraven.github.io/blog/categories/osx/atom.xml" rel="self"/>
+  <link href="http://onyxraven.github.io/"/>
+  <updated>2014-01-10T15:30:55-07:00</updated>
+  <id>http://onyxraven.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Local/Server Synchronization With Ruby and FSEvent]]></title>
+    <link href="http://onyxraven.github.io/blog/2011/10/02/sync-ruby-fsevent/"/>
+    <updated>2011-10-02T03:12:00-06:00</updated>
+    <id>http://onyxraven.github.io/blog/2011/10/02/sync-ruby-fsevent</id>
+    <content type="html"><![CDATA[<p>A lot of the work I do is PHP/html type coding. I try to keep a local setup that is able to run all of my code without too much trouble, but eventually all that code has to be tested on something resembling the production environment, or there are certain functions that can only be performed there (say, handling NFS mounts, or attaching to databases otherwise firewalled on my local machine). In those situations, I need to be able to quickly copy my code from my local machine to the development server. I used to do this manually, but the cycle of edit-save-copy-test was really annoying. Aptana and Eclipse have some tools that help, but I don&rsquo;t use those tools anymore day-to-day, and they seemed to always get messed up.</p>
+
+<p>I took while to find a suitable setup for keeping files in sync like this. Somehow I came across doubledown, a ruby script using the OSX FSEvent framework. For whatever reason, I couldn&rsquo;t quite make it work on my machine (YMMV), so I took the idea and searched for other uses of FSEvent out there. I came across a few rubygems wrapping FSEvent nicely, and wrote a script around that. First, you&rsquo;ll probably want to set up ssh keys. This will let you rsync over ssh without having to log in every time (kind of important on this one). I don&rsquo;t like the idea of having keys that don&rsquo;t have a password, so I use keychain to manage my keys. In my ~/.zshrc I have the following snippet:</p>
+
+<p><div><script src='https://gist.github.com/4366205.js'></script>
+<noscript><pre><code>w=`echo &quot;($RANDOM % 499) * 100000000000000000&quot; | bc -lws`; sleep $w
+keychain --attempts 3 --lockwait 60 -q $HOME/.ssh/github_rsa $HOME/.ssh/onyx_dsa
+if [ -f $HOME/.keychain/$HOST-sh ]; then
+    source $HOME/.keychain/$HOST-sh
+else
+    echo &quot;No keychain for $HOST&quot;;
+fi
+</code></pre></noscript></div>
+</p>
+
+<p>The random delay lets me launch more than one shell at a time (my default windowgroup in Terminal.app is has two) without conflict.</p>
+
+<p>Second, you&rsquo;ll want to have a way to fully-sync your directories. The following script does this with a single command, and with some options provided by gnu getopt. The biggest features are a preset source/destination (which can be appended), and skipping .svn/.hg directories. In a rush, skipping those makes a HUGE speed difference (especially when skipping svn).</p>
+
+<p><div><script src='https://gist.github.com/4366220.js'></script>
+<noscript><pre><code>#!/bin/bash
+#requires gnu getopt
+#requires rsync
+
+GETOPT=&quot;/opt/local/bin/getopt&quot;
+rsynccmd=&quot;rtlzv --exclude=compile --exclude=cache&quot;
+
+localdir='/Volumes/Work/dev'
+devdir='/home/username/dev'
+devhost=&quot;dev&quot;
+
+fromdev=0
+nodelete=0
+upfirst=0
+withcustom=0
+withsvn=0
+
+tmp=`$GETOPT -o h?nRrs -l reverse,no-delete,help,dry-run:: -n $0 -- &quot;$@&quot;`
+
+if [ $? != 0 ] ; then 
+    echo $USAGE &gt;&amp;2 
+    exit 1 
+fi 
+
+eval set -- &quot;$tmp&quot; 
+
+# parse options 
+while true; do  
+    case $1 in
+        -n|--dry-run )
+            rsynccmd=&quot;n$rsynccmd&quot;
+            shift;;
+        --with-custom )
+            withcustom=1
+            shift;;
+        --no-delete )
+            nodelete=1
+            shift;;
+        -o|--config_override )
+            override=1
+            shift;;
+        -R|-r|--reverse )
+            fromdev=1
+            shift;;
+        -s|--svn )
+            withsvn=1
+            shift;;
+        -- ) 
+            shift
+            break;; 
+        * ) 
+            echo $USAGE 
+            exit 1;;
+    esac
+done
+
+if [ $nodelete -eq 0 ]; then
+    rsynccmd=&quot;$rsynccmd --delete&quot;
+fi
+
+if [ $withcustom -eq 0 ]; then
+    rsynccmd=&quot;$rsynccmd --exclude=custom.ini&quot;
+fi
+
+if [ $withsvn -eq 0 ]; then
+    rsynccmd=&quot;$rsynccmd --exclude=.svn&quot;
+fi
+
+if [ &quot;x$1&quot; == &quot;x&quot; ]; then
+    if [ $fromdev -eq 0 ]; then
+        echo rsync -$rsynccmd $localdir/ $devhost:$devdir/
+        rsync -$rsynccmd $localdir/ $devhost:$devdir/
+    else 
+        echo rsync -$rsynccmd $devhost:$devdir/ $localdir/
+        rsync -$rsynccmd $devhost:$devdir/ $localdir/
+    fi
+fi
+
+
+while [ &quot;x$1&quot; != &quot;x&quot; ]; do
+    dir=`echo $1 | tr '^' '/'`
+    if [ $fromdev -eq 0 ]; then
+         echo rsync -$rsynccmd $localdir/$dir/ $devhost:$devdir/$dir/
+         rsync -$rsynccmd $localdir/$dir/ $devhost:$devdir/$dir/
+    else
+        echo rsync -$rsynccmd $devhost:$devdir/$dir/ $localdir/$dir/
+        rsync -$rsynccmd $devhost:$devdir/$dir/ $localdir/$dir/
+    fi
+
+    shift
+done</code></pre></noscript></div>
+</p>
+
+<p>Now for the actual ruby script using FSEvent. It also includes using growl to notify on synchronization events. While not required, it is nice to know when things are synched (and it lets me know the script is still running), but it can get a bit spammy (especially running svn up on a directory).</p>
+
+<p><div><script src='https://gist.github.com/4366239.js'></script>
+<noscript><pre><code>#!/usr/bin/env ruby
+#requires osx fsevent
+#requires growl with network registration enabled (at least once)
+#requires the below rubygems
+#requires rsync
+
+require 'rubygems'
+require 'rb-fsevent'
+require 'ruby-growl'
+
+local='/Volumes/Work/dev/'
+remote='dev:/home/username/dev/'
+
+# Decide on the local path.
+Dir.mkdir(local) unless File.directory?(local)
+local = File.expand_path(local)
+
+# Parse the server and remote path.  Decide on the remote username.
+raise unless remote =~ /^(?:([^@]+)@)?([^:]+):(.+)$/
+    user, server, remote = $1, $2, $3
+user ||= ENV[&quot;USER&quot;]
+
+g = Growl.new(&quot;localhost&quot;, &quot;dirsync-monitor&quot;, [&quot;dirsync-monitor Push&quot;])
+g.notify(&quot;dirsync-monitor Push&quot;, &quot;Watch Started&quot;, &quot;#{local} =&gt; #{remote}&quot;)
+
+fsevent = FSEvent.new
+fsevent.watch local do |directories|
+    #$stderr.puts &quot;# detected change inside: #{directories.inspect}&quot;
+    directories.each do |dir|
+        pathname2 = &quot;#{dir.sub(local, &quot;&quot;)}&quot;
+        #ignore some stuff
+        if pathname2.match('/\.svn/.*$') != nil || 
+            pathname2.match('/\.hg/.*$') != nil || 
+            pathname2.match('/compile/$') != nil || 
+            pathname2.match('/cache/$') != nil then
+            next
+        end
+        l = &quot;#{local}#{pathname2}&quot;.gsub(' ', '\\\\ ')
+        r =  &quot;#{user}@#{server}:#{remote}#{pathname2}&quot;.gsub(' ', '\\\\ ')
+
+        cmd = &quot;rsync -tzplr --delete-after --exclude='/*/*' --exclude='custom.ini' --exclude='.svn' --exclude='.hg' --exclude='compile' --exclude='cache' --exclude='*.swp' #{l} #{r}&quot;
+        #$stderr.puts cmd
+        g.notify(&quot;dirsync-monitor Push&quot;, &quot;Sync&quot;, &quot;#{l} =&gt; #{r}&quot;)
+        system(cmd)
+    end
+end
+fsevent.run</code></pre></noscript></div>
+</p>
+
+<p>These scripts aren&rsquo;t perfect, and are meant to be modified to your own needs and preferences. Its so nice not to have to worry about manually syncing the directories anymore though!</p>
+]]></content>
+  </entry>
+  
+</feed>

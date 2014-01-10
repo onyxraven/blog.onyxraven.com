@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
+  <title>Rails REST API Versioning - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="There have been a few other articles regarding versioning REST APIs in Rails. Many reference this RailsCasts (#350) to set up header based versioning &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://onyxraven.github.io">
+  <link rel="canonical" href="http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
@@ -64,51 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/01/10/octopress/">&#8216;Octopress!&#8217;</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-10T15:21:55-07:00" pubdate data-updated="true">Jan 10<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/18/rails-rest-api-versioning/">Rails REST API Versioning</a></h1>
+      <h1 class="entry-title">Rails REST API Versioning</h1>
     
     
       <p class="meta">
@@ -131,7 +91,7 @@
   </header>
 
 
-  <div class="entry-content"><p>There have been a few other articles regarding versioning REST APIs in Rails.  Many reference <a href="http://railscasts.com/episodes/350-rest-api-versioning">this RailsCasts (#350)</a> to set up header based versioning, and there have been a few setting up path based versioning using the &lsquo;namespace&rsquo; feature in Rails 3 routing.</p>
+<div class="entry-content"><p>There have been a few other articles regarding versioning REST APIs in Rails.  Many reference <a href="http://railscasts.com/episodes/350-rest-api-versioning">this RailsCasts (#350)</a> to set up header based versioning, and there have been a few setting up path based versioning using the &lsquo;namespace&rsquo; feature in Rails 3 routing.</p>
 
 <p>Our API was set up with path based using routing namespaces, and we moved ahead happily with v1.</p>
 
@@ -200,60 +160,16 @@
 
 <p>Now, in the v2 scope, we can also override a given resource with a controller from the new namespace, since it will match first.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/09/mp4box-fix-online-mp4s/">MP4Box Can Fix Your Online-hosted MP4s</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
 
-<time datetime="2013-01-09T07:56:00-07:00" pubdate data-updated="true">Jan 9<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I just discovered MP4Box (available in osx homebrew as well as other places).  It has tools for rearranging your MP4 videos to optimize them for streaming.  We just did this on all our videos, and not only do they start up faster on every device, it fixed some devices that refused to play our videos!</p>
-
-<p>Our magic incantation was simple: <code>MP4Box -hint $file</code></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/07/rspec-cache-toggle/">Toggle Rails Caching in RSpec Suites</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -265,274 +181,40 @@
   
 
 
-<time datetime="2013-01-07T01:20:00-07:00" pubdate data-updated="true">Jan 7<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Useful snippet for enabling/disabling the cache during rspec</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-09-18T09:39:00-06:00" pubdate data-updated="true">Sep 18<span>th</span>, 2013</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/19/log-example-names-rspec/">Log Example Names/descriptions From Rspec</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/routing/'>routing</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
+  
+</span>
 
 
-<time datetime="2012-12-19T05:42:52-07:00" pubdate data-updated="true">Dec 19<span>th</span>, 2012</time>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>This can help dig into the logs for a spec file.  You can do one of these two things (both is overkill)</p>
-
-<div><script src='https://gist.github.com/4339818.js'></script>
-<noscript><pre><code>describe &quot;Something&quot;
-  before(:each) do |x|
-    Rails.logger.info &quot;RspecExample: &quot; + x.example.metadata[:full_description]
-  end
-end</code></pre></noscript></div>
-
-
-
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning/" data-via="" data-counturl="http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/10/02/sync-ruby-fsevent/">Local/Server Synchronization With Ruby and FSEvent</a></h1>
-    
-    
-      <p class="meta">
-        
+        <a class="basic-alignment left" href="/blog/2013/01/09/mp4box-fix-online-mp4s/" title="Previous Post: MP4Box can fix your online-hosted MP4s">&laquo; MP4Box can fix your online-hosted MP4s</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/01/10/octopress/" title="Next Post: 'Octopress!'">'Octopress!' &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-10-02T03:12:00-06:00" pubdate data-updated="true">Oct 2<span>nd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A lot of the work I do is PHP/html type coding. I try to keep a local setup that is able to run all of my code without too much trouble, but eventually all that code has to be tested on something resembling the production environment, or there are certain functions that can only be performed there (say, handling NFS mounts, or attaching to databases otherwise firewalled on my local machine). In those situations, I need to be able to quickly copy my code from my local machine to the development server. I used to do this manually, but the cycle of edit-save-copy-test was really annoying. Aptana and Eclipse have some tools that help, but I don&rsquo;t use those tools anymore day-to-day, and they seemed to always get messed up.</p>
-
-<p>I took while to find a suitable setup for keeping files in sync like this. Somehow I came across doubledown, a ruby script using the OSX FSEvent framework. For whatever reason, I couldn&rsquo;t quite make it work on my machine (YMMV), so I took the idea and searched for other uses of FSEvent out there. I came across a few rubygems wrapping FSEvent nicely, and wrote a script around that. First, you&rsquo;ll probably want to set up ssh keys. This will let you rsync over ssh without having to log in every time (kind of important on this one). I don&rsquo;t like the idea of having keys that don&rsquo;t have a password, so I use keychain to manage my keys. In my ~/.zshrc I have the following snippet:</p>
-
-<div><script src='https://gist.github.com/4366205.js'></script>
-<noscript><pre><code>w=`echo &quot;($RANDOM % 499) * 100000000000000000&quot; | bc -lws`; sleep $w
-keychain --attempts 3 --lockwait 60 -q $HOME/.ssh/github_rsa $HOME/.ssh/onyx_dsa
-if [ -f $HOME/.keychain/$HOST-sh ]; then
-    source $HOME/.keychain/$HOST-sh
-else
-    echo &quot;No keychain for $HOST&quot;;
-fi
-</code></pre></noscript></div>
-
-
-<p>The random delay lets me launch more than one shell at a time (my default windowgroup in Terminal.app is has two) without conflict.</p>
-
-<p>Second, you&rsquo;ll want to have a way to fully-sync your directories. The following script does this with a single command, and with some options provided by gnu getopt. The biggest features are a preset source/destination (which can be appended), and skipping .svn/.hg directories. In a rush, skipping those makes a HUGE speed difference (especially when skipping svn).</p>
-
-<div><script src='https://gist.github.com/4366220.js'></script>
-<noscript><pre><code>#!/bin/bash
-#requires gnu getopt
-#requires rsync
-
-GETOPT=&quot;/opt/local/bin/getopt&quot;
-rsynccmd=&quot;rtlzv --exclude=compile --exclude=cache&quot;
-
-localdir='/Volumes/Work/dev'
-devdir='/home/username/dev'
-devhost=&quot;dev&quot;
-
-fromdev=0
-nodelete=0
-upfirst=0
-withcustom=0
-withsvn=0
-
-tmp=`$GETOPT -o h?nRrs -l reverse,no-delete,help,dry-run:: -n $0 -- &quot;$@&quot;`
-
-if [ $? != 0 ] ; then 
-    echo $USAGE &gt;&amp;2 
-    exit 1 
-fi 
-
-eval set -- &quot;$tmp&quot; 
-
-# parse options 
-while true; do  
-    case $1 in
-        -n|--dry-run )
-            rsynccmd=&quot;n$rsynccmd&quot;
-            shift;;
-        --with-custom )
-            withcustom=1
-            shift;;
-        --no-delete )
-            nodelete=1
-            shift;;
-        -o|--config_override )
-            override=1
-            shift;;
-        -R|-r|--reverse )
-            fromdev=1
-            shift;;
-        -s|--svn )
-            withsvn=1
-            shift;;
-        -- ) 
-            shift
-            break;; 
-        * ) 
-            echo $USAGE 
-            exit 1;;
-    esac
-done
-
-if [ $nodelete -eq 0 ]; then
-    rsynccmd=&quot;$rsynccmd --delete&quot;
-fi
-
-if [ $withcustom -eq 0 ]; then
-    rsynccmd=&quot;$rsynccmd --exclude=custom.ini&quot;
-fi
-
-if [ $withsvn -eq 0 ]; then
-    rsynccmd=&quot;$rsynccmd --exclude=.svn&quot;
-fi
-
-if [ &quot;x$1&quot; == &quot;x&quot; ]; then
-    if [ $fromdev -eq 0 ]; then
-        echo rsync -$rsynccmd $localdir/ $devhost:$devdir/
-        rsync -$rsynccmd $localdir/ $devhost:$devdir/
-    else 
-        echo rsync -$rsynccmd $devhost:$devdir/ $localdir/
-        rsync -$rsynccmd $devhost:$devdir/ $localdir/
-    fi
-fi
-
-
-while [ &quot;x$1&quot; != &quot;x&quot; ]; do
-    dir=`echo $1 | tr '^' '/'`
-    if [ $fromdev -eq 0 ]; then
-         echo rsync -$rsynccmd $localdir/$dir/ $devhost:$devdir/$dir/
-         rsync -$rsynccmd $localdir/$dir/ $devhost:$devdir/$dir/
-    else
-        echo rsync -$rsynccmd $devhost:$devdir/$dir/ $localdir/$dir/
-        rsync -$rsynccmd $devhost:$devdir/$dir/ $localdir/$dir/
-    fi
-
-    shift
-done</code></pre></noscript></div>
-
-
-<p>Now for the actual ruby script using FSEvent. It also includes using growl to notify on synchronization events. While not required, it is nice to know when things are synched (and it lets me know the script is still running), but it can get a bit spammy (especially running svn up on a directory).</p>
-
-<div><script src='https://gist.github.com/4366239.js'></script>
-<noscript><pre><code>#!/usr/bin/env ruby
-#requires osx fsevent
-#requires growl with network registration enabled (at least once)
-#requires the below rubygems
-#requires rsync
-
-require 'rubygems'
-require 'rb-fsevent'
-require 'ruby-growl'
-
-local='/Volumes/Work/dev/'
-remote='dev:/home/username/dev/'
-
-# Decide on the local path.
-Dir.mkdir(local) unless File.directory?(local)
-local = File.expand_path(local)
-
-# Parse the server and remote path.  Decide on the remote username.
-raise unless remote =~ /^(?:([^@]+)@)?([^:]+):(.+)$/
-    user, server, remote = $1, $2, $3
-user ||= ENV[&quot;USER&quot;]
-
-g = Growl.new(&quot;localhost&quot;, &quot;dirsync-monitor&quot;, [&quot;dirsync-monitor Push&quot;])
-g.notify(&quot;dirsync-monitor Push&quot;, &quot;Watch Started&quot;, &quot;#{local} =&gt; #{remote}&quot;)
-
-fsevent = FSEvent.new
-fsevent.watch local do |directories|
-    #$stderr.puts &quot;# detected change inside: #{directories.inspect}&quot;
-    directories.each do |dir|
-        pathname2 = &quot;#{dir.sub(local, &quot;&quot;)}&quot;
-        #ignore some stuff
-        if pathname2.match('/\.svn/.*$') != nil || 
-            pathname2.match('/\.hg/.*$') != nil || 
-            pathname2.match('/compile/$') != nil || 
-            pathname2.match('/cache/$') != nil then
-            next
-        end
-        l = &quot;#{local}#{pathname2}&quot;.gsub(' ', '\\\\ ')
-        r =  &quot;#{user}@#{server}:#{remote}#{pathname2}&quot;.gsub(' ', '\\\\ ')
-
-        cmd = &quot;rsync -tzplr --delete-after --exclude='/*/*' --exclude='custom.ini' --exclude='.svn' --exclude='.hg' --exclude='compile' --exclude='cache' --exclude='*.swp' #{l} #{r}&quot;
-        #$stderr.puts cmd
-        g.notify(&quot;dirsync-monitor Push&quot;, &quot;Sync&quot;, &quot;#{l} =&gt; #{r}&quot;)
-        system(cmd)
-    end
-end
-fsevent.run</code></pre></noscript></div>
-
-
-<p>These scripts aren&rsquo;t perfect, and are meant to be modified to your own needs and preferences. Its so nice not to have to worry about manually syncing the directories anymore though!</p>
 </div>
-  
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -540,7 +222,7 @@ fsevent.run</code></pre></noscript></div>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/01/10/octopress/">&#8216;Octopress!&#8217;</a>
+        <a href="/blog/2014/01/10/octopress/">'Octopress!'</a>
       </li>
     
       <li class="post">
@@ -568,6 +250,7 @@ fsevent.run</code></pre></noscript></div>
 
   
 </aside>
+
 
     </div>
   </div>

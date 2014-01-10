@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Mp4 | My Octopress Blog]]></title>
+  <link href="http://onyxraven.github.io/blog/categories/mp4/atom.xml" rel="self"/>
+  <link href="http://onyxraven.github.io/"/>
+  <updated>2014-01-10T15:30:55-07:00</updated>
+  <id>http://onyxraven.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MP4Box Can Fix Your Online-hosted MP4s]]></title>
+    <link href="http://onyxraven.github.io/blog/2013/01/09/mp4box-fix-online-mp4s/"/>
+    <updated>2013-01-09T07:56:00-07:00</updated>
+    <id>http://onyxraven.github.io/blog/2013/01/09/mp4box-fix-online-mp4s</id>
+    <content type="html"><![CDATA[<p>I just discovered MP4Box (available in osx homebrew as well as other places).  It has tools for rearranging your MP4 videos to optimize them for streaming.  We just did this on all our videos, and not only do they start up faster on every device, it fixed some devices that refused to play our videos!</p>
+
+<p>Our magic incantation was simple: <code>MP4Box -hint $file</code></p>
+]]></content>
+  </entry>
+  
+</feed>

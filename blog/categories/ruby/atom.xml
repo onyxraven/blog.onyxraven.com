@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://onyxraven.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Ruby | My Octopress Blog]]></title>
+  <link href="http://onyxraven.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://onyxraven.github.io/"/>
   <updated>2014-01-10T15:30:55-07:00</updated>
   <id>http://onyxraven.github.io/</id>
@@ -14,15 +14,6 @@
 
   
   <entry>
-    <title type="html"><![CDATA['Octopress!']]></title>
-    <link href="http://onyxraven.github.io/blog/2014/01/10/octopress/"/>
-    <updated>2014-01-10T15:21:55-07:00</updated>
-    <id>http://onyxraven.github.io/blog/2014/01/10/octopress</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Rails REST API Versioning]]></title>
     <link href="http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning/"/>
     <updated>2013-09-18T09:39:00-06:00</updated>
@@ -31,36 +22,25 @@
 
 <p>Our API was set up with path based using routing namespaces, and we moved ahead happily with v1.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">namespace</span> <span class="ss">:v1</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">resource</span> <span class="ss">:ping</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">Api</span><span class="o">::</span><span class="ss">V1</span><span class="p">:</span><span class="ss">:PingController</span> <span class="o">.</span><span class="n">.</span><span class="o">.</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>```ruby
+namespace :v1 do
+  resource :ping
+end</p>
 
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">GET</span> <span class="ss">http</span><span class="p">:</span><span class="sr">//ex</span><span class="n">ample</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">ping</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<p>class Api::V1::PingController &hellip;
+end
+<code>
+</code>
+GET <a href="http://example.org/v1/ping">http://example.org/v1/ping</a>
+```</p>
 
 <p>Recently we started working on v2 features, and started in a new namespace, looking just like v1.  To make it easy on our apps, we wanted to make all the API calls against the v2 api, even on controllers that didn&rsquo;t get an &lsquo;upgrade&rsquo; into the v2 namespace.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">http</span><span class="p">:</span><span class="sr">//ex</span><span class="n">ample</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">ping</span>
-</span><span class='line'><span class="ss">http</span><span class="p">:</span><span class="sr">//ex</span><span class="n">ample</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">v2</span><span class="o">/</span><span class="n">ping</span> <span class="c1">#fallback to the v1</span>
-</span><span class='line'><span class="ss">http</span><span class="p">:</span><span class="sr">//ex</span><span class="n">ample</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">v2</span><span class="o">/</span><span class="n">pong</span> <span class="c1">#use v2 namespace</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<p><code>
+http://example.org/v1/ping
+http://example.org/v2/ping #fallback to the v1
+http://example.org/v2/pong #use v2 namespace
+</code></p>
 
 <p>This is a non-obvious operation.  In most REST cases, redirects like explained in <a href="http://stackoverflow.com/questions/9627546/api-versioning-for-rails-routes/9627796#9627796">this StackOverflow post</a> are not possible because you shouldn&rsquo;t redirect POSTs (technically an HTTP 301 response should work, but there are few HTTP clients that respect that strict mode.  If you don&rsquo;t believe a 301 response to a POST should result in a new POST, read <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">the spec</a> carefully).</p>
 
@@ -68,22 +48,15 @@
 
 <p>Taking a cue from that, I came up with the replacement for the &lsquo;namespace&rsquo; lines:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">scope</span> <span class="ss">:module</span> <span class="o">=&gt;</span> <span class="s1">&#39;v2&#39;</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">&#39;:api_version&#39;</span><span class="p">,</span> <span class="ss">:constraints</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:api_version</span> <span class="o">=&gt;</span> <span class="sr">/v2/</span> <span class="p">}</span> <span class="k">do</span>
-</span><span class='line'>   <span class="n">resource</span> <span class="ss">:pong</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">scope</span> <span class="ss">:module</span> <span class="o">=&gt;</span> <span class="s1">&#39;v1&#39;</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">&#39;:api_version&#39;</span><span class="p">,</span> <span class="ss">:constraints</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:api_version</span> <span class="o">=&gt;</span> <span class="sr">/v[12]/</span> <span class="p">}</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">resource</span> <span class="ss">:ping</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>```ruby
+scope :module => &lsquo;v2&rsquo;, :path => &lsquo;:api_version&rsquo;, :constraints => { :api_version => /v2/ } do
+   resource :pong
+end</p>
 
+<p>scope :module => &lsquo;v1&rsquo;, :path => &lsquo;:api_version&rsquo;, :constraints => { :api_version => /v[12]/ } do
+  resource :ping
+end
+```</p>
 
 <p>A few notes about the scope line:</p>
 
@@ -99,45 +72,6 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[MP4Box Can Fix Your Online-hosted MP4s]]></title>
-    <link href="http://onyxraven.github.io/blog/2013/01/09/mp4box-fix-online-mp4s/"/>
-    <updated>2013-01-09T07:56:00-07:00</updated>
-    <id>http://onyxraven.github.io/blog/2013/01/09/mp4box-fix-online-mp4s</id>
-    <content type="html"><![CDATA[<p>I just discovered MP4Box (available in osx homebrew as well as other places).  It has tools for rearranging your MP4 videos to optimize them for streaming.  We just did this on all our videos, and not only do they start up faster on every device, it fixed some devices that refused to play our videos!</p>
-
-<p>Our magic incantation was simple: <code>MP4Box -hint $file</code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Toggle Rails Caching in RSpec Suites]]></title>
-    <link href="http://onyxraven.github.io/blog/2013/01/07/rspec-cache-toggle/"/>
-    <updated>2013-01-07T01:20:00-07:00</updated>
-    <id>http://onyxraven.github.io/blog/2013/01/07/rspec-cache-toggle</id>
-    <content type="html"><![CDATA[<p>Useful snippet for enabling/disabling the cache during rspec</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Log Example Names/descriptions From Rspec]]></title>
-    <link href="http://onyxraven.github.io/blog/2012/12/19/log-example-names-rspec/"/>
-    <updated>2012-12-19T05:42:52-07:00</updated>
-    <id>http://onyxraven.github.io/blog/2012/12/19/log-example-names-rspec</id>
-    <content type="html"><![CDATA[<p>This can help dig into the logs for a spec file.  You can do one of these two things (both is overkill)</p>
-
-<div><script src='https://gist.github.com/4339818.js'></script>
-<noscript><pre><code>describe &quot;Something&quot;
-  before(:each) do |x|
-    Rails.logger.info &quot;RspecExample: &quot; + x.example.metadata[:full_description]
-  end
-end</code></pre></noscript></div>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Local/Server Synchronization With Ruby and FSEvent]]></title>
     <link href="http://onyxraven.github.io/blog/2011/10/02/sync-ruby-fsevent/"/>
     <updated>2011-10-02T03:12:00-06:00</updated>
@@ -146,7 +80,7 @@ end</code></pre></noscript></div>
 
 <p>I took while to find a suitable setup for keeping files in sync like this. Somehow I came across doubledown, a ruby script using the OSX FSEvent framework. For whatever reason, I couldn&rsquo;t quite make it work on my machine (YMMV), so I took the idea and searched for other uses of FSEvent out there. I came across a few rubygems wrapping FSEvent nicely, and wrote a script around that. First, you&rsquo;ll probably want to set up ssh keys. This will let you rsync over ssh without having to log in every time (kind of important on this one). I don&rsquo;t like the idea of having keys that don&rsquo;t have a password, so I use keychain to manage my keys. In my ~/.zshrc I have the following snippet:</p>
 
-<div><script src='https://gist.github.com/4366205.js'></script>
+<p><div><script src='https://gist.github.com/4366205.js'></script>
 <noscript><pre><code>w=`echo &quot;($RANDOM % 499) * 100000000000000000&quot; | bc -lws`; sleep $w
 keychain --attempts 3 --lockwait 60 -q $HOME/.ssh/github_rsa $HOME/.ssh/onyx_dsa
 if [ -f $HOME/.keychain/$HOST-sh ]; then
@@ -155,13 +89,13 @@ else
     echo &quot;No keychain for $HOST&quot;;
 fi
 </code></pre></noscript></div>
-
+</p>
 
 <p>The random delay lets me launch more than one shell at a time (my default windowgroup in Terminal.app is has two) without conflict.</p>
 
 <p>Second, you&rsquo;ll want to have a way to fully-sync your directories. The following script does this with a single command, and with some options provided by gnu getopt. The biggest features are a preset source/destination (which can be appended), and skipping .svn/.hg directories. In a rush, skipping those makes a HUGE speed difference (especially when skipping svn).</p>
 
-<div><script src='https://gist.github.com/4366220.js'></script>
+<p><div><script src='https://gist.github.com/4366220.js'></script>
 <noscript><pre><code>#!/bin/bash
 #requires gnu getopt
 #requires rsync
@@ -253,11 +187,11 @@ while [ &quot;x$1&quot; != &quot;x&quot; ]; do
 
     shift
 done</code></pre></noscript></div>
-
+</p>
 
 <p>Now for the actual ruby script using FSEvent. It also includes using growl to notify on synchronization events. While not required, it is nice to know when things are synched (and it lets me know the script is still running), but it can get a bit spammy (especially running svn up on a directory).</p>
 
-<div><script src='https://gist.github.com/4366239.js'></script>
+<p><div><script src='https://gist.github.com/4366239.js'></script>
 <noscript><pre><code>#!/usr/bin/env ruby
 #requires osx fsevent
 #requires growl with network registration enabled (at least once)
@@ -305,7 +239,7 @@ fsevent.watch local do |directories|
     end
 end
 fsevent.run</code></pre></noscript></div>
-
+</p>
 
 <p>These scripts aren&rsquo;t perfect, and are meant to be modified to your own needs and preferences. Its so nice not to have to worry about manually syncing the directories anymore though!</p>
 ]]></content>
