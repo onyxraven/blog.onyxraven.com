@@ -5,8 +5,8 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Rails REST API versioning - My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>Rails REST API versioning - OnyxRaven</title>
+  <meta name="author" content="Justin Hart">
 
   
   <meta name="description" content="There have been a few other articles regarding versioning REST APIs in Rails. Many reference this RailsCasts (#350) to set up header based versioning &hellip;">
@@ -24,7 +24,7 @@
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="OnyxRaven" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -35,9 +35,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
+  <h1><a href="/">OnyxRaven</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>OnyxRaven's Blog</h2>
   
 </hgroup>
 
@@ -67,8 +67,11 @@
   
   <header>
     
-      <h1 class="entry-title">Rails REST API Versioning</h1>
+      
+        <h1 class="entry-title">Rails REST API Versioning</h1>
+      
     
+
     
       <p class="meta">
         
@@ -88,6 +91,7 @@
       </p>
     
   </header>
+
 
 
 <div class="entry-content"><p>There have been a few other articles regarding versioning REST APIs in Rails.  Many reference <a href="http://railscasts.com/episodes/350-rest-api-versioning">this RailsCasts (#350)</a> to set up header based versioning, and there have been a few setting up path based versioning using the &lsquo;namespace&rsquo; feature in Rails 3 routing.</p>
@@ -166,7 +170,7 @@
       
   
 
-<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+<span class="byline author vcard">Posted by <span class="fn">Justin Hart</span></span>
 
       
 
@@ -194,7 +198,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning/" data-via="" data-counturl="http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning/" data-via="onyxraven" data-counturl="http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning/" >Tweet</a>
   
   
   
@@ -243,6 +247,35 @@
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/onyxraven">@onyxraven</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'onyxraven',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
 
 
 
@@ -254,7 +287,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Your Name -
+  Copyright &copy; 2014 - Justin Hart -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
