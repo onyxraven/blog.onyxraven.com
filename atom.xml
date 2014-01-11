@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://onyxraven.github.io/atom.xml" rel="self"/>
   <link href="http://onyxraven.github.io/"/>
-  <updated>2014-01-10T15:30:55-07:00</updated>
+  <updated>2014-01-10T17:21:13-07:00</updated>
   <id>http://onyxraven.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -23,7 +23,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Rails REST API Versioning]]></title>
+    <title type="html"><![CDATA[Rails REST API versioning]]></title>
     <link href="http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning/"/>
     <updated>2013-09-18T09:39:00-06:00</updated>
     <id>http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning</id>
@@ -99,7 +99,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[MP4Box Can Fix Your Online-hosted MP4s]]></title>
+    <title type="html"><![CDATA[MP4Box can fix your online-hosted MP4s]]></title>
     <link href="http://onyxraven.github.io/blog/2013/01/09/mp4box-fix-online-mp4s/"/>
     <updated>2013-01-09T07:56:00-07:00</updated>
     <id>http://onyxraven.github.io/blog/2013/01/09/mp4box-fix-online-mp4s</id>
@@ -119,7 +119,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Log Example Names/descriptions From Rspec]]></title>
+    <title type="html"><![CDATA[Log example names/descriptions from rspec]]></title>
     <link href="http://onyxraven.github.io/blog/2012/12/19/log-example-names-rspec/"/>
     <updated>2012-12-19T05:42:52-07:00</updated>
     <id>http://onyxraven.github.io/blog/2012/12/19/log-example-names-rspec</id>
@@ -138,7 +138,7 @@ end</code></pre></noscript></div>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Local/Server Synchronization With Ruby and FSEvent]]></title>
+    <title type="html"><![CDATA[Local/Server synchronization with Ruby and FSEvent]]></title>
     <link href="http://onyxraven.github.io/blog/2011/10/02/sync-ruby-fsevent/"/>
     <updated>2011-10-02T03:12:00-06:00</updated>
     <id>http://onyxraven.github.io/blog/2011/10/02/sync-ruby-fsevent</id>

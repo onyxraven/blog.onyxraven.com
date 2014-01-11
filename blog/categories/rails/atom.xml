@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Rails | My Octopress Blog]]></title>
+  <title><![CDATA[Category: rails | My Octopress Blog]]></title>
   <link href="http://onyxraven.github.io/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://onyxraven.github.io/"/>
-  <updated>2014-01-10T15:30:55-07:00</updated>
+  <updated>2014-01-10T17:21:13-07:00</updated>
   <id>http://onyxraven.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Rails REST API Versioning]]></title>
+    <title type="html"><![CDATA[Rails REST API versioning]]></title>
     <link href="http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning/"/>
     <updated>2013-09-18T09:39:00-06:00</updated>
     <id>http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning</id>

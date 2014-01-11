@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Gist | My Octopress Blog]]></title>
+  <title><![CDATA[Category: gist | My Octopress Blog]]></title>
   <link href="http://onyxraven.github.io/blog/categories/gist/atom.xml" rel="self"/>
   <link href="http://onyxraven.github.io/"/>
-  <updated>2014-01-10T15:30:55-07:00</updated>
+  <updated>2014-01-10T17:21:13-07:00</updated>
   <id>http://onyxraven.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Log Example Names/descriptions From Rspec]]></title>
+    <title type="html"><![CDATA[Log example names/descriptions from rspec]]></title>
     <link href="http://onyxraven.github.io/blog/2012/12/19/log-example-names-rspec/"/>
     <updated>2012-12-19T05:42:52-07:00</updated>
     <id>http://onyxraven.github.io/blog/2012/12/19/log-example-names-rspec</id>
