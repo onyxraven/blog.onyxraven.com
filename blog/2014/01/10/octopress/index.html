@@ -9,8 +9,7 @@
   <meta name="author" content="Justin Hart">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="So I moved everything over to Octopress/Jekyll &ndash; I really like being able to write pretty normal markdown as the syntax for everything. Most of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -56,6 +55,7 @@
   
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
   <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
@@ -94,7 +94,9 @@
 
 
 
-<div class="entry-content">
+<div class="entry-content"><p>So I moved everything over to Octopress/Jekyll &ndash; I really like being able to write pretty normal markdown as the syntax for everything. Most of the generator code is just ruby, and the template engine is Liquid (which is kinda weird but whatever).</p>
+
+<p>I&rsquo;m still tweaking the styling.  I found a good starting point for using the Solarized colorscheme, but its got some kinda strange bugs that are a little tough to get out.</p>
 </div>
 
 
@@ -125,8 +127,6 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://onyxraven.github.io/blog/2014/01/10/octopress/" data-via="onyxraven" data-counturl="http://onyxraven.github.io/blog/2014/01/10/octopress/" >Tweet</a>
-  
   
   
 </div>
@@ -146,6 +146,10 @@
 <aside class="sidebar">
   
     <section>
+  <h1>About Me</h1>
+  <p>Justin Hart: Developer for <a href="https://twitter.com/ibottaapp">@ibottaapp</a>. Gamer, Geek, Coloradan.</p>
+</section>
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
@@ -202,7 +206,21 @@
 </section>
 
 
-
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("onyxraven", , );
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/onyxraven">@onyxraven</a></p>
+  
+</section>
 
 
   
@@ -224,16 +242,6 @@
 
 
 
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

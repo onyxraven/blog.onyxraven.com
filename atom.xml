@@ -4,7 +4,7 @@
   <title><![CDATA[OnyxRaven]]></title>
   <link href="http://onyxraven.github.io/atom.xml" rel="self"/>
   <link href="http://onyxraven.github.io/"/>
-  <updated>2014-01-13T18:59:04-07:00</updated>
+  <updated>2014-01-13T19:25:54-07:00</updated>
   <id>http://onyxraven.github.io/</id>
   <author>
     <name><![CDATA[Justin Hart]]></name>
@@ -21,7 +21,9 @@
       <updated>2014-01-10T15:21:55-07:00</updated>
       <id>http://onyxraven.github.io/blog/2014/01/10/octopress</id>
     
-      <content type="html"><![CDATA[
+      <content type="html"><![CDATA[<p>So I moved everything over to Octopress/Jekyll &ndash; I really like being able to write pretty normal markdown as the syntax for everything. Most of the generator code is just ruby, and the template engine is Liquid (which is kinda weird but whatever).</p>
+
+<p>I&rsquo;m still tweaking the styling.  I found a good starting point for using the Solarized colorscheme, but its got some kinda strange bugs that are a little tough to get out.</p>
 ]]></content>
     
   </entry>

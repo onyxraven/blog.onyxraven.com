@@ -55,6 +55,7 @@
   
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
   <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
@@ -197,8 +198,6 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning/" data-via="onyxraven" data-counturl="http://onyxraven.github.io/blog/2013/09/18/rails-rest-api-versioning/" >Tweet</a>
-  
   
   
 </div>
@@ -220,6 +219,10 @@
 <aside class="sidebar">
   
     <section>
+  <h1>About Me</h1>
+  <p>Justin Hart: Developer for <a href="https://twitter.com/ibottaapp">@ibottaapp</a>. Gamer, Geek, Coloradan.</p>
+</section>
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
@@ -276,7 +279,21 @@
 </section>
 
 
-
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("onyxraven", , );
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/onyxraven">@onyxraven</a></p>
+  
+</section>
 
 
   
@@ -298,16 +315,6 @@
 
 
 
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 
