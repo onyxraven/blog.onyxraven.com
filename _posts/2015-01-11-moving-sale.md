@@ -11,9 +11,23 @@ categories: forsale
 ![Aeron](/images/2015-01-11-moving-sale/aeron-3.jpg)
 
 * Loaded
+* 'B' size
 * Like New
 * **Asking: $400 obo.**
 * [Craigslist Post](http://denver.craigslist.org/fuo/4845125003.html)
+
+# Sony Grand Wega 42WE655 42" LCD Projection TV
+![TV](/images/2015-01-11-moving-sale/wega-1.jpg)
+![TV](/images/2015-01-11-moving-sale/wega-2.jpg)
+![TV](/images/2015-01-11-moving-sale/wega-3.jpg)
+
+* 720p/1080i resolution
+* Good sound
+* Original lamp
+* 1 HDMI, 1 Component connections, cable ready, hdtv tuner
+* Remote
+* **Asking: $75 obo**
+* [Craigslist Post](http://denver.craigslist.org/ele/4845149652.html)
 
 # NordicTrack A2750pro Treadmill
 ![Treadmill](/images/2015-01-11-moving-sale/nordic-track-1.jpg)
