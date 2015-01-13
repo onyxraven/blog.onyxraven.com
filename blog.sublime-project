@@ -1,0 +1,19 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				".gitignore",
+				"_posts/2015-01-11-moving-sale.md",
+				".ruby-version"
+			],
+			"folder_exclude_patterns":
+			[
+				".sass-cache",
+				"_site"
+			],
+			"path": "."
+		}
+	]
+}

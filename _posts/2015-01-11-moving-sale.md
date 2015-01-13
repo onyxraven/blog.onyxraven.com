@@ -5,6 +5,16 @@ date: 2015-01-11 14:30:00
 categories: forsale
 ---
 
+# Herman Miller Aeron (Loaded)
+![Aeron](/images/2015-01-11-moving-sale/aeron-1.jpg)
+![Aeron](/images/2015-01-11-moving-sale/aeron-2.jpg)
+![Aeron](/images/2015-01-11-moving-sale/aeron-3.jpg)
+
+* Loaded
+* Like New
+* **Asking: $400 obo.**
+* [Craigslist Post](http://denver.craigslist.org/fuo/4845125003.html)
+
 # NordicTrack A2750pro Treadmill
 ![Treadmill](/images/2015-01-11-moving-sale/nordic-track-1.jpg)
 ![Treadmill](/images/2015-01-11-moving-sale/nordic-track-2.jpg)
