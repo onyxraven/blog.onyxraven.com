@@ -1,20 +1,9 @@
 ---
 layout: post
-title:  "Moving Sale!"
+title:  "Moving Sale! (Updated with Lower Prices)"
 date: 2015-01-11 14:30:00
 categories: forsale
 ---
-
-# Herman Miller Aeron (Loaded)
-![Aeron](/images/2015-01-11-moving-sale/aeron-1.jpg)
-![Aeron](/images/2015-01-11-moving-sale/aeron-2.jpg)
-![Aeron](/images/2015-01-11-moving-sale/aeron-3.jpg)
-
-* Loaded
-* 'B' size
-* Like New
-* **Asking: $400 obo.**
-* [Craigslist Post](http://denver.craigslist.org/fuo/4845125003.html)
 
 # Sony Grand Wega 42WE655 42" LCD Projection TV
 ![TV](/images/2015-01-11-moving-sale/wega-1.jpg)
@@ -26,19 +15,8 @@ categories: forsale
 * Original lamp
 * 1 HDMI, 1 Component connections, cable ready, hdtv tuner
 * Remote
-* **Asking: $75 obo**
+* **Asking: $60 obo**
 * [Craigslist Post](http://denver.craigslist.org/ele/4845149652.html)
-
-# NordicTrack A2750pro Treadmill
-![Treadmill](/images/2015-01-11-moving-sale/nordic-track-1.jpg)
-![Treadmill](/images/2015-01-11-moving-sale/nordic-track-2.jpg)
-
-* Original belt and rollers
-* Still works like new
-* Was very well rated when bought (2011)
-* [Product Manual](https://service.nordictrack.com/CustomerService/modelInfo.do?model=NTL01009&modelName=NORDICTRACK+A2750+PRO+TREADMILL&version=0&company=11)
-* **Asking: $400 obo.**  Buyer will need to pick up from Lakewood (bring 2 people!)
-* [Craigslist Post](http://denver.craigslist.org/spo/4842761638.html)
 
 # Total Gym 1500
 ![Total Gym](/images/2015-01-11-moving-sale/totalgym.jpg)
@@ -46,7 +24,7 @@ categories: forsale
 * Bar and Handle attachments
 * Rollers like new
 * [Product Manual](http://www.totalgymdirect.com/download.php?file=TG1500OwnersMan.pdf)
-* **Asking: $100 obo.**  Buyer will need to pick up from Lakewood
+* **Asking: $90 obo.**  Buyer will need to pick up from Lakewood
 * [Craigslist Post](http://denver.craigslist.org/spo/4842765601.html)
 
 # Yamaha HTR-5450 Home Theater Receiver
@@ -59,7 +37,7 @@ categories: forsale
 * 4 optical, 1 coaxial inputs
 * Great audio receiver/amplifier
 * [Product Info](http://usa.yamaha.com/products/audio-visual/av-receivers-amps/htr/htr-5450_black__u/)
-* **Asking: $50 obo.**
+* **Asking: $45 obo.**
 * [Craigslist Post](http://denver.craigslist.org/ele/4842769037.html)
 
 # Samsung BD-P1600 Blu-Ray Player
@@ -70,7 +48,7 @@ categories: forsale
 * [Product Info](http://www.samsung.com/us/support/owners/product/BD-P1600)
 * Remote
 * Great condition, great player
-* **Asking: $40 obo.**
+* **Asking: $35 obo.**
 * [Craigslist Post](http://denver.craigslist.org/ele/4842772313.html)
 
 # Samsung DVD-HD850 DVD Player
@@ -103,7 +81,7 @@ categories: forsale
 * Great shape
 * 3-9; W; 1,3,5 Woods
 * Steel Shafts
-* **Asking: $60 obo.**
+* **Asking: $50 obo.**
 * [Craigslist Post](http://denver.craigslist.org/spo/4842788472.html)
 
 # Vortex Plus by Technique - Complete Set + Driver, U-Wedge
@@ -113,7 +91,7 @@ categories: forsale
 * Great shape, great for beginners
 * 3-9; PW; new U/A Wedge (Pinewood Pre), Assorted Driver
 * Steel Shafts
-* **Asking: $80 obo.**
+* **Asking: $65 obo.**
 * [Craigslist Post](http://denver.craigslist.org/spo/4842791947.html)
 
 # Sony CDP-365 5-disc CD Changer
@@ -124,6 +102,6 @@ categories: forsale
 * Perfect working condition
 * Great quality
 * L/R RCA outputs
-* **Asking: $35 obo.**
+* **Asking: $25 obo.**
 * [Craigslist Post](http://denver.craigslist.org/ele/4842794226.html)
 
