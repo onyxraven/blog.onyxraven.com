@@ -7,13 +7,12 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://onyxraven.com" # the base hostname & protocol for your site
 twitter_username: onyxraven
 github_username:  onyxraven
-timezone: America/Denver
-
+timezone: America/Los_Angeles
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 github: onyxraven
-
+gems: [jekyll-gist]
 kramdown:
   input: GFM
