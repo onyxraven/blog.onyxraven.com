@@ -13,8 +13,12 @@ timezone: America/Los_Angeles
 markdown: kramdown
 highlighter: rouge
 github: onyxraven
-gems: 
+gems:
   - jekyll-gist
   - jekyll-github-metadata
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jemoji
 kramdown:
   input: GFM
