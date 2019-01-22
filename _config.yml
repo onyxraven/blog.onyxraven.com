@@ -22,3 +22,5 @@ gems:
   - jemoji
 kramdown:
   input: GFM
+
+theme: jekyll-theme-hacker
