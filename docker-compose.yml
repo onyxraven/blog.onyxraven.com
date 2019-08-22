@@ -2,7 +2,8 @@ version: '3'
 services:
 
   pages:
-    image: starefossen/github-pages
+    build:
+      context: .
     environment:
       - JEKYLL_GITHUB_TOKEN
     ports:
