@@ -1,0 +1,51 @@
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<div id="tester" style="width:100%;height:100%;"></div>
+
+<script>
+
+
+  Plotly.d3.csv("http://blog.onyxraven.com/ffl/plot.csv", (data) => {
+    let rank = [];
+    let dev = [];
+    let text = [];
+    let color = [];
+    let colorFunction = Plotly.d3.scale.category20();
+    data.forEach((row) => {
+      rank.push(row.Rank);
+      dev.push(row["STD Dev"]);
+      text.push(row["Rank"] + ": " + row["Player Name"] + " " + row["Position"]);
+      color.push(colorFunction(parseInt(row["Rank"]) % 20));
+    });
+
+    var layout = {
+      title: 'Rank',
+      font: { size: 12 },
+      yaxis: {
+        range: [0, 50]
+      },
+      xaxis: { range: [0, 100] }
+    };
+
+    TESTER = document.getElementById('tester');
+    Plotly.plot(TESTER, [{
+      x: rank,
+      y: rank,
+      text: text,
+      mode: 'markers+text',
+      type: 'scatter',
+      textposition: 'top right',
+      marker: { color: color },
+      error_x: {
+        type: 'data',
+        array: dev,
+        visible: true,
+      },
+    }],
+      layout,
+      { responsive: true }
+    );
+
+  });
+</script>
